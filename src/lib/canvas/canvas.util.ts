@@ -1,5 +1,6 @@
 import { type Canvas, createCanvas, type Image, loadImage, type SKRSContext2D } from "@napi-rs/canvas";
 import { AttachmentBuilder } from "discord.js";
+import { theme } from "@config/theme";
 import { ServiceError } from "@core/errors";
 import { clusters, drawText } from "@lib/canvas/text.util";
 
@@ -69,7 +70,7 @@ export function drawAvatarImage(
 	y: number,
 	size: number,
 	initial: string,
-	background = "#5865f2",
+	background: string = theme.brandHex,
 ): void {
 	if (image !== null) {
 		circleClip(ctx, x + size / 2, y + size / 2, size / 2);
@@ -102,7 +103,7 @@ export async function drawAvatarOrInitial(
 	y: number,
 	size: number,
 	initial: string,
-	background = "#5865f2",
+	background: string = theme.brandHex,
 ): Promise<boolean> {
 	const image = await loadAvatar(url);
 	drawAvatarImage(ctx, image, x, y, size, initial, background);

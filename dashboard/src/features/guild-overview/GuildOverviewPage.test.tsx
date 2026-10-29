@@ -147,7 +147,7 @@ describe("the guild overview", () => {
 
 		renderPage();
 
-		expect(await screen.findByText(/testify is not in that server/i)).toBeInTheDocument();
+		expect(await screen.findByText(/firmino is not in that server/i)).toBeInTheDocument();
 	});
 
 	it("names the permission when the caller cannot manage the guild", async () => {

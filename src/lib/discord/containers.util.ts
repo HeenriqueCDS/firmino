@@ -13,7 +13,7 @@ import {
 	ThumbnailBuilder,
 } from "discord.js";
 import { type Category } from "@config/categories";
-import { categoryColour } from "@config/theme";
+import { categoryColour, theme } from "@config/theme";
 import { type ContainerMessage, type ContainerPart } from "@lib/discord/discord.types";
 
 /** Components V2 — layout built from components rather than an embed. */
@@ -85,13 +85,13 @@ export function container(options: {
 /** `setAccentColor` needs a number, but the theme stores named colours for embeds. */
 function resolveAccent(category: Category): number {
 	const colour = categoryColour(category);
-	return typeof colour === "number" ? colour : 0x5865f2;
+	return typeof colour === "number" ? colour : resolveColor(theme.brandHex);
 }
 
 function resolveNamed(colour: ColorResolvable): number {
 	try {
 		return resolveColor(colour);
 	} catch {
-		return 0x5865f2;
+		return resolveColor(theme.brandHex);
 	}
 }

@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
-# Testify — the bot, and the dashboard it serves from the same process.
-# Build:  docker build -t testify .
+# Firmino (based on Testify) — the bot, and the dashboard it serves from the same process.
+# Build:  docker build -t firmino .
 # Run:    docker compose up -d      (see docker-compose.yml and docs/hosting.md)
 
 ARG NODE_VERSION=24-bookworm-slim

@@ -31,25 +31,27 @@
  * The console palette. Every value is verified against WCAG before it lands, by `src/test/contrast.test.ts`,
  * which fails if one drops below its threshold.
  *
- * Two colours carry the violet because one cannot: `--color-primary` is a **fill** and only ever wears white
- * text on it, while `--color-accent` is the **text** violet for links and live state. Using the fill colour as
- * 14px text measured 3.47:1 and failed AA in five real places.
+ * Two colours carry the gold because one cannot: `--color-primary` is a **fill** and only ever wears white
+ * text on it, while `--color-accent` is the **text** gold for links and live state. Using the fill colour as
+ * 14px text fails AA at the shade a fill needs for white to sit on it.
  */
 @theme {
 	/* Every colour is `light-dark(light, dark)`, so a token is one line holding both themes and the two can
-	   never drift to different sets. `contrast.test.ts` reads both halves and checks each against WCAG. */
-	--color-background: light-dark(#f4f4f9, #07070b);
-	--color-foreground: light-dark(#15151f, #ffffff);
-	--color-muted: light-dark(#e9e8f2, #1c1c2a);
-	--color-muted-foreground: light-dark(#55556e, #a2a2ba);
-	--color-card: light-dark(#ffffff, #12121c);
-	--color-popover: light-dark(#ffffff, #171722);
-	--color-border: light-dark(#dcdae8, #262639);
-	--color-input: light-dark(#6b6b8a, #7676a0);
-	--color-primary: light-dark(#6d28d9, #7c3aed);
+	   never drift to different sets. `contrast.test.ts` reads both halves and checks each against WCAG.
+	   Neutrals are warm rather than blue-tinted, which is what makes black-and-gold read as a palette rather
+	   than violet with the accent swapped out. */
+	--color-background: light-dark(#f8f6f1, #0a0908);
+	--color-foreground: light-dark(#1c1712, #ffffff);
+	--color-muted: light-dark(#eee8dc, #1e1a15);
+	--color-muted-foreground: light-dark(#5c5347, #b4a999);
+	--color-card: light-dark(#ffffff, #141110);
+	--color-popover: light-dark(#ffffff, #19140f);
+	--color-border: light-dark(#e3dccf, #2a2420);
+	--color-input: light-dark(#6b6354, #8a7c67);
+	--color-primary: light-dark(#8a6a00, #8a6a00);
 	--color-primary-foreground: #ffffff;
-	--color-accent: light-dark(#5b21b6, #a78bfa);
-	--color-ring: light-dark(#6d28d9, #a78bfa);
+	--color-accent: light-dark(#7a5704, #e3c23c);
+	--color-ring: light-dark(#8a6a00, #e3c23c);
 	--color-success: light-dark(#047857, #3ddc97);
 	--color-warning: light-dark(#a16207, #fbbf24);
 	--color-destructive: light-dark(#b91c1c, #dc2626);
@@ -163,7 +165,7 @@
 	}
 
 	/**
-	 * The accent choices. Only the three violet-carrying tokens move: success, warning and destructive keep
+	 * The accent choices. Only the three gold-carrying tokens move: success, warning and destructive keep
 	 * their own meanings, so Delete stays red and a saved badge stays green whatever is chosen here. Each pair
 	 * is measured against both backgrounds by `contrast.test.ts`, which reads these blocks rather than keeping
 	 * a list of its own.
@@ -172,10 +174,16 @@
 	 * in that accent while the page around it stays on the chosen one — the same trick `ThemePreview` plays
 	 * with `color-scheme`. These sit in the `base` layer, which is what puts them ahead of `@theme`.
 	 *
-	 * Violet restates the base palette rather than relying on it: choosing violet leaves the page unmarked, but
-	 * a swatch still has to paint violet while the page around it wears something else. The test asserts the two
+	 * Gold restates the base palette rather than relying on it: choosing gold leaves the page unmarked, but
+	 * a swatch still has to paint gold while the page around it wears something else. The test asserts the two
 	 * copies are identical.
 	 */
+	[data-accent="gold"] {
+		--color-primary: light-dark(#8a6a00, #8a6a00);
+		--color-accent: light-dark(#7a5704, #e3c23c);
+		--color-ring: light-dark(#8a6a00, #e3c23c);
+	}
+
 	[data-accent="violet"] {
 		--color-primary: light-dark(#6d28d9, #7c3aed);
 		--color-accent: light-dark(#5b21b6, #a78bfa);

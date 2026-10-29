@@ -1,5 +1,11 @@
 # AGENTS.md — working on Testify
 
+> [!NOTE]
+> This repository is **Firmino**, a fork of Testify for the Firma community. Internal identifiers —
+> `TestifyClient`, the `@testify/shared` and `@testify/dashboard` workspace package names, file names, and every
+> other reference to "Testify" in code — are kept **on purpose**, to keep merging upstream changes easy. Do not
+> rename them. `LICENSE` and `NOTICE` must stay intact and unmodified.
+
 Everything needed to work on this repo: how the bot is built, how to run and test it, the conventions, and the
 rules that have been agreed over time. Read this first. It is written so that anyone — a person or a coding agent —
 arriving with no memory of previous sessions can make a correct change and commit it. `CLAUDE.md` only points

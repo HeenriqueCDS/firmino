@@ -83,8 +83,8 @@ describe("the owner's server list", () => {
 			"Fewest members",
 			"Newly joined",
 			"Joined longest ago",
-			"Uses Testify the most",
-			"Uses Testify the least",
+			"Uses Firmino the most",
+			"Uses Firmino the least",
 			"Uses the dashboard the most",
 			"Name, A to Z",
 		]);
@@ -224,7 +224,7 @@ describe("one server's usage", () => {
 	it("opens the blacklist with the member's ID filled in, ready for a reason", async () => {
 		renderAt(DRILL_DOWN);
 
-		await userEvent.click(await screen.findByRole("button", { name: "Block alice from Testify" }));
+		await userEvent.click(await screen.findByRole("button", { name: "Block alice from Firmino" }));
 
 		expect(await screen.findByLabelText("User ID")).toHaveValue(ALICE);
 		expect(screen.getByLabelText("Reason (optional)")).toHaveFocus();

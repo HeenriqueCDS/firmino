@@ -28,7 +28,7 @@ describe("the sticky page", () => {
 	});
 
 	/** A configuration that cannot work should say so here rather than by silently never posting. */
-	it("warns when Testify cannot post in the channel", async () => {
+	it("warns when Firmino cannot post in the channel", async () => {
 		server.use(
 			http.get(`/api/guilds/${GUILD}/sticky`, () =>
 				HttpResponse.json({
@@ -218,7 +218,7 @@ describe("adding a sticky", () => {
 		);
 		renderPage();
 
-		expect(await screen.findByText(/most stickies Testify can hold/i)).toBeInTheDocument();
+		expect(await screen.findByText(/most stickies Firmino can hold/i)).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: /add sticky/i })).toBeDisabled();
 	});
 

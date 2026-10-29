@@ -54,7 +54,7 @@ describe("the role menus page", () => {
 
 		const admin = await screen.findByRole("checkbox", { name: /Admin/ });
 		expect(admin).toBeDisabled();
-		expect(screen.getByText("above Testify")).toBeInTheDocument();
+		expect(screen.getByText("above Firmino")).toBeInTheDocument();
 	});
 
 	it("makes a menu from what was filled in", async () => {

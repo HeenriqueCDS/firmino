@@ -39,17 +39,17 @@ function renderApp() {
 
 describe("pageTitle", () => {
 	it("names the screen and the product", () => {
-		expect(pageTitle("Levelling")).toBe("Levelling · Testify");
+		expect(pageTitle("Levelling")).toBe("Levelling · Firmino");
 	});
 
 	/** Two tabs on the same screen in different servers are otherwise indistinguishable. */
 	it("puts the server between them when there is one", () => {
-		expect(pageTitle("Levelling", "Testify HQ")).toBe("Levelling · Testify HQ · Testify");
+		expect(pageTitle("Levelling", "Testify HQ")).toBe("Levelling · Testify HQ · Firmino");
 	});
 
 	it("leaves out a server that has not loaded yet", () => {
-		expect(pageTitle("Levelling", undefined)).toBe("Levelling · Testify");
-		expect(pageTitle("Levelling", "")).toBe("Levelling · Testify");
+		expect(pageTitle("Levelling", undefined)).toBe("Levelling · Firmino");
+		expect(pageTitle("Levelling", "")).toBe("Levelling · Firmino");
 	});
 });
 

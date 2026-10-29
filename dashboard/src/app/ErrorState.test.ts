@@ -10,7 +10,7 @@ function problem(status: number, code: string, message = "no"): ApiError {
 describe("describing a failure", () => {
 	it("tells someone the bot has left rather than that something broke", () => {
 		expect(describeError(problem(404, "guild_not_found"), i18next.t)).toMatchObject({
-			title: "Testify is not in that server",
+			title: "Firmino is not in that server",
 			retryable: false,
 		});
 	});

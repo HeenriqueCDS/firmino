@@ -1,18 +1,21 @@
 {
-	"name": "testify",
+	"name": "firmino",
 	"version": "2.0.9",
-	"description": "Open source, multipurpose Discord bot written in TypeScript",
+	"description": "Firmino — the Firma's bot: music, utilities and levels",
 	"main": "dist/index.js",
 	"license": "SEE LICENSE IN LICENSE",
-	"author": "Kkermit",
+	"author": "Henrique Carvalho",
+	"contributors": [
+		"Kkermit (original Testify author)"
+	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Kkkermit/Testify.git"
+		"url": "git+https://github.com/HeenriqueCDS/firmino.git"
 	},
 	"bugs": {
-		"url": "https://github.com/Kkkermit/Testify/issues"
+		"url": "https://github.com/HeenriqueCDS/firmino/issues"
 	},
-	"homepage": "https://github.com/Kkkermit/Testify#readme",
+	"homepage": "https://github.com/HeenriqueCDS/firmino#readme",
 	"keywords": [
 		"discord",
 		"discord-bot",

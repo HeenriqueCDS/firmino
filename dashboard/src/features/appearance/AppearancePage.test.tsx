@@ -76,21 +76,21 @@ describe("choosing a theme", () => {
 });
 
 describe("choosing an accent", () => {
-	it("starts on violet, which is the palette the stylesheet already holds", async () => {
+	it("starts on gold, which is the palette the stylesheet already holds", async () => {
 		render();
 
-		expect(await screen.findByRole("button", { name: "Violet" })).toHaveAttribute("aria-pressed", "true");
+		expect(await screen.findByRole("button", { name: "Gold" })).toHaveAttribute("aria-pressed", "true");
 		expect(document.documentElement.hasAttribute("data-accent")).toBe(false);
 	});
 
-	it("marks the page with an explicit choice, and unmarks it for violet", async () => {
+	it("marks the page with an explicit choice, and unmarks it for gold", async () => {
 		const user = userEvent.setup();
 		render();
 
 		await user.click(await screen.findByRole("button", { name: "Teal" }));
 		expect(document.documentElement).toHaveAttribute("data-accent", "teal");
 
-		await user.click(screen.getByRole("button", { name: "Violet" }));
+		await user.click(screen.getByRole("button", { name: "Gold" }));
 		expect(document.documentElement.hasAttribute("data-accent")).toBe(false);
 	});
 

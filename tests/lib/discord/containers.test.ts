@@ -93,7 +93,9 @@ describe("container", () => {
 
 	/** A colour is never worth failing a message over. */
 	it("falls back rather than throwing on a colour it cannot read", () => {
-		expect(json(container({ accent: "NotAColour" as never, parts: [text("x")] })).accent_color).toBe(0x5865f2);
+		expect(json(container({ accent: "NotAColour" as never, parts: [text("x")] })).accent_color).toBe(
+			resolveColor(theme.brandHex),
+		);
 	});
 
 	it("keeps its parts in the order they were passed", () => {

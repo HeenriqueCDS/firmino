@@ -25,6 +25,7 @@ function rotatePresence(client: TestifyClient, ready: Client<true>): void {
 		{ type: ActivityType.Watching, name: `${ready.guilds.cache.size} servers` },
 		{ type: ActivityType.Watching, name: `${members} members` },
 		{ type: ActivityType.Listening, name: "/help" },
+		{ type: ActivityType.Playing, name: "on shift at Firma · /help" },
 	] as const;
 
 	const activity = activities[Math.floor(Math.random() * activities.length)];
