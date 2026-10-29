@@ -1,4 +1,5 @@
 import { type Image, loadImage } from "@napi-rs/canvas";
+import { theme } from "@config/theme";
 import { createCanvas, roundedRect, type SKRSContext2D } from "@lib/canvas/canvas.util";
 import { DISPLAY, drawText, measureText, type TextStyle, wrapLines } from "@lib/canvas/text.util";
 import { coverRect } from "@lib/canvas/welcomeCard.util";
@@ -19,7 +20,7 @@ const TITLE_LEADING = 52;
 const PALETTE = {
 	from: "#2b2d6e",
 	to: "#16161d",
-	accent: "#5865f2",
+	accent: theme.brandHex,
 	text: "#ffffff",
 	muted: "#d0d3db",
 	faint: "#a6a9b3",

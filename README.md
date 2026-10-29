@@ -1,3 +1,35 @@
+# Firmino
+
+The Discord bot for Firma — music, utilities, levels and more, for our community.
+
+## Credits and license
+
+Based on [Testify](https://github.com/Kkkermit/Testify) by Kkermit. Licensed under Apache-2.0 with the
+Commons Clause — see [LICENSE](LICENSE) and [NOTICE](NOTICE). The Commons Clause forbids selling the
+software, or services whose value derives substantially from it.
+
+## Quick start
+
+1. Copy `.env.example` to `.env` and fill in `DISCORD_TOKEN`, `DISCORD_CLIENT_ID`, `DISCORD_OWNER_IDS` and
+   `MONGODB_URI`.
+2. Run it with Docker:
+
+   ```bash
+   docker compose up -d
+   ```
+
+   Or run it directly with Node (>= 24.11):
+
+   ```bash
+   npm ci && npm run build && npm start
+   ```
+
+For configuration, commands and architecture details, see [AGENTS.md](AGENTS.md) and [docs/README.md](docs/README.md).
+
+---
+
+## Original Testify README
+
 <!--     ████████╗███████╗███████╗████████╗██╗███████╗██╗   ██╗
          ╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██║██╔════╝╚██╗ ██╔╝
             ██║   █████╗  ███████╗   ██║   ██║█████╗   ╚████╔╝

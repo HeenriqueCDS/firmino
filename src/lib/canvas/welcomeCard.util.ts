@@ -1,5 +1,6 @@
 import { loadImage } from "@napi-rs/canvas";
 import { type AttachmentBuilder } from "discord.js";
+import { theme } from "@config/theme";
 import { createCanvas, drawAvatarOrInitial, roundedRect, toAttachment } from "@lib/canvas/canvas.util";
 import { DISPLAY, drawText } from "@lib/canvas/text.util";
 import { formatNumber } from "@lib/format/format.util";
@@ -11,7 +12,7 @@ const HEIGHT = 400;
 const PALETTE = {
 	from: "#1e1f22",
 	to: "#2b2d31",
-	accent: "#5865f2",
+	accent: theme.brandHex,
 	text: "#ffffff",
 	muted: "#c9ccd1",
 	scrim: "rgba(0, 0, 0, 0.55)",

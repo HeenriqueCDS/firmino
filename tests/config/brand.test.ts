@@ -27,8 +27,10 @@ describe("the bot's name", () => {
 
 	/** Forks had to find and replace the name across 200 strings, and missed the ones that mattered. */
 	it("is written nowhere but its default, so a fork renames the bot in .env", () => {
+		// theme.ts names the upstream project this fork is based on, which is not the running bot's name either.
+		const NAMES_UPSTREAM = join("src", "config", "theme.ts");
 		const offenders = SWEPT.flatMap((part) => filesUnder(join(ROOT, part)))
-			.filter((file) => !file.endsWith(join("shared", "src", "brand.ts")))
+			.filter((file) => !file.endsWith(join("shared", "src", "brand.ts")) && !file.endsWith(NAMES_UPSTREAM))
 			.flatMap((file) =>
 				readFileSync(file, "utf8")
 					.split("\n")

@@ -1,15 +1,20 @@
 import { type ColorResolvable } from "discord.js";
 import { CATEGORIES, type Category } from "@config/categories";
 
+/** The one definition of Firmino's brand gold, so every surface that is not a named Discord colour reads it from here. */
+const BRAND_HEX = "#d4af37";
+
 /** Colours, emoji and branding. */
 export const theme = {
-	author: "Kkermit",
-	repository: "https://github.com/Kkkermit/Testify",
+	author: "Henrique Carvalho (Firma) · based on Testify by Kkermit",
+	repository: "https://github.com/HeenriqueCDS/firmino",
+	// TODO: still points at Testify's support server — swap for Firma's own invite once one exists.
 	supportServer: "https://discord.gg/xcMVwAVjSD",
+	brandHex: BRAND_HEX,
 
 	/** The only place a colour is written. Everything else names one of these. */
 	colours: {
-		default: "Blurple",
+		default: BRAND_HEX,
 		error: "Red",
 		success: "Green",
 		warning: "Yellow",

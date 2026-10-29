@@ -100,14 +100,14 @@ describe.each(["light", "dark"] as const)("the %s palette", (scheme) => {
 		},
 	);
 
-	it("keeps the fill violet and the text violet as separate tokens", () => {
+	it("keeps the fill gold and the text gold as separate tokens", () => {
 		expect(token_("primary")).not.toBe(token_("accent"));
 		expect(contrast(token_("accent"), background)).toBeGreaterThanOrEqual(TEXT);
 	});
 });
 
-/** The dark fill violet (3.47:1) stays out of use as body text. */
-it("keeps the dark fill violet out of reach as a text colour", () => {
+/** The dark fill gold stays out of use as body text. */
+it("keeps the dark fill gold out of reach as a text colour", () => {
 	expect(contrast(token("primary", "dark"), token("background", "dark"))).toBeLessThan(TEXT);
 });
 
@@ -133,15 +133,15 @@ describe.each(ACCENTS)("the %s accent", (accent) => {
 		});
 	});
 
-	/** The same hazard the base violet has: a fill that reads as legible text on near-black, and is not. */
+	/** The same hazard the base gold has: a fill that reads as legible text on near-black, and is not. */
 	it("keeps its dark fill out of reach as a text colour", () => {
 		expect(contrast(accentToken(accent, "primary", "dark"), token("background", "dark"))).toBeLessThan(TEXT);
 	});
 });
 
-/** The violet block has to match the base tokens, or its swatch shows a colour it does not select. */
-describe.each(["light", "dark"] as const)("the violet block in %s", (scheme) => {
+/** The gold block has to match the base tokens, or its swatch shows a colour it does not select. */
+describe.each(["light", "dark"] as const)("the gold block in %s", (scheme) => {
 	it.each(["primary", "accent", "ring"])("matches the base %s token", (name) => {
-		expect(accentToken("violet", name, scheme)).toBe(token(name, scheme));
+		expect(accentToken("gold", name, scheme)).toBe(token(name, scheme));
 	});
 });

@@ -163,7 +163,7 @@ describe("printBanner", () => {
 	it("reports the facts it was handed", () => {
 		printBanner(clientFor(), ready, "t?", "every server", loaded);
 
-		expect(written).toContain("Testify");
+		expect(written).toContain("Firmino");
 		expect(written).toContain("t?");
 		expect(written).toContain("every server");
 		expect(written).toContain("87 loaded");

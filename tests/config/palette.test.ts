@@ -37,9 +37,11 @@ describe("the category palette", () => {
 });
 
 describe("the semantic palette", () => {
-	it("names a colour discord.js knows", () => {
-		for (const colour of Object.values(theme.colours)) {
-			expect(Object.keys(Colors)).toContain(colour);
+	/** `default` is the brand's own gold, a literal hex rather than a colour Discord named — everything else is named. */
+	it("names a colour discord.js knows, or is the brand's own literal hex", () => {
+		for (const [name, colour] of Object.entries(theme.colours)) {
+			if (name === "default") expect(colour).toBe(theme.brandHex);
+			else expect(Object.keys(Colors)).toContain(colour);
 		}
 	});
 

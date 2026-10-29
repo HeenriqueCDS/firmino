@@ -52,7 +52,7 @@ describe("ChannelPicker", () => {
 		renderPicker("400000000000000002");
 
 		expect(
-			screen.getByText("Testify cannot post in #locked. Give it Send Messages there, or pick another channel."),
+			screen.getByText("Firmino cannot post in #locked. Give it Send Messages there, or pick another channel."),
 		).toBeInTheDocument();
 	});
 });

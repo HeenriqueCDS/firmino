@@ -28,7 +28,7 @@ describe("identityOf", () => {
 	it("reads the profile Discord gives it", () => {
 		expect(identityOf(userLike() as never)).toEqual({
 			id: "100000000000000001",
-			name: "Testify",
+			name: "Firmino",
 			username: "Testify",
 			avatarUrl: "https://cdn.discordapp.com/avatars/1/abc.png",
 			bannerUrl: "https://cdn.discordapp.com/banners/1/def.png",

@@ -1,4 +1,5 @@
 import { type AttachmentBuilder } from "discord.js";
+import { theme } from "@config/theme";
 import { createCanvas, drawAvatarOrInitial, roundedRect, toAttachment } from "@lib/canvas/canvas.util";
 import { DISPLAY, drawText } from "@lib/canvas/text.util";
 import { formatNumber, ordinal } from "@lib/format/format.util";
@@ -12,7 +13,7 @@ const PALETTE = {
 	backdropTo: "#2b2d31",
 	panel: "#111214",
 	track: "#3f4147",
-	fill: "#5865f2",
+	fill: theme.brandHex,
 	text: "#ffffff",
 	muted: "#b5bac1",
 	accent: "#fee75c",

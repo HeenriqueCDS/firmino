@@ -21,12 +21,12 @@ describe("the automod page", () => {
 		expect(screen.getByRole("heading", { name: "Server rules" })).toBeInTheDocument();
 	});
 
-	/** A rule somebody made in Discord's own UI is not one Testify is responsible for, and should not look it. */
-	it("marks only the rules Testify created", async () => {
+	/** A rule somebody made in Discord's own UI is not one Firmino is responsible for, and should not look it. */
+	it("marks only the rules Firmino created", async () => {
 		renderPage();
 		await screen.findByRole("heading", { name: "Block spam" });
 
-		expect(screen.getAllByText("Added by Testify")).toHaveLength(1);
+		expect(screen.getAllByText("Added by Firmino")).toHaveLength(1);
 	});
 
 	it("says what each rule does rather than only naming it", async () => {

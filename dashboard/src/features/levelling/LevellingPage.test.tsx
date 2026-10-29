@@ -222,7 +222,7 @@ describe("the rewards tab", () => {
 		await screen.findByLabelText("Role");
 
 		expect(screen.queryByRole("option", { name: "Admin" })).toBeNull();
-		expect(await screen.findByText(/above testify/i)).toBeInTheDocument();
+		expect(await screen.findByText(/above firmino/i)).toBeInTheDocument();
 	});
 
 	it("refuses to add a second reward for a level that already has one", async () => {

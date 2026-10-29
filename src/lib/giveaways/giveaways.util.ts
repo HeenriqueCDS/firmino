@@ -1,4 +1,5 @@
 import { type Giveaway as LiveGiveaway, GiveawaysManager } from "discord-giveaways";
+import { theme } from "@config/theme";
 import { type TestifyClient } from "@core/client";
 import { Giveaway, type GiveawayRecord } from "@database/models/giveaway.schema";
 
@@ -29,7 +30,7 @@ let manager: GiveawaysManager | undefined;
 
 export function giveaways(client: TestifyClient): GiveawaysManager {
 	manager ??= new MongoGiveawaysManager(client, {
-		default: { botsCanWin: false, embedColor: "#5865f2", embedColorEnd: "#2f3136", reaction: "🎉" },
+		default: { botsCanWin: false, embedColor: theme.brandHex, embedColorEnd: "#2f3136", reaction: "🎉" },
 	});
 	return manager;
 }
